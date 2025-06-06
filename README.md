@@ -1,0 +1,1 @@
+# og-labs-storage-node-guide
