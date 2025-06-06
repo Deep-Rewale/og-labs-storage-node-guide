@@ -84,7 +84,7 @@ curl -o $HOME/0g-storage-node/run/config.toml https://raw.githubusercontent.com/
 nano $HOME/0g-storage-node/run/config.toml
 ```
 
-# If u want to change RPC then follow this:
+# Change the rpc
 
 1. replace these rpc  = https://evmrpc-testnet.0g.ai
 
