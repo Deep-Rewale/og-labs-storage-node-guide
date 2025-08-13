@@ -49,7 +49,7 @@ cargo build --release
 # Step 6: Setup config file
 rm -f "$HOME/0g-storage-node/run/config.toml"
 mkdir -p "$HOME/0g-storage-node/run"
-curl -o "$HOME/0g-storage-node/run/config.toml" https://raw.githubusercontent.com/HustleAirdrops/0G-Storage-Node/main/config.toml
+curl -o "$HOME/0g-storage-node/run/config.toml" https://raw.githubusercontent.com/Deep-Rewale/og-labs-storage-node-guide/main/config.toml
 
 # Step 7: Get private key and rpc from user
 read -e -p "🔐 Enter PRIVATE KEY (with or without 0x): " k; k=${k#0x}; printf "\033[A\033[K"; [[ ${#k} -eq 64 && "$k" =~ ^[0-9a-fA-F]+$ ]] && sed -i "s|miner_key = .*|miner_key = \"$k\"|" "$HOME/0g-storage-node/run/config.toml" && echo "✅ Private key updated: ${k:0:4}****${k: -4}" || echo "❌ Invalid key! Must be 64 hex chars."
@@ -88,10 +88,16 @@ rm -rf "$HOME/0g-storage-node/run/db/flow_db"
 
 echo "⬇️ Downloading and Extracting fast sync database..."
 
-wget https://github.com/HustleAirdrops/0G-Storage-Node/releases/download/Try/flow_db.tar.gz \
+wget https://github.com/Deep-Rewale/og-labs-storage-node-guide/releases/download/Try/flow_db.tar.gz \
   -O $HOME/0g-storage-node/run/db/flow_db.tar.gz && \
   tar -xzvf $HOME/0g-storage-node/run/db/flow_db.tar.gz -C $HOME/0g-storage-node/run/db/
   
 echo "🚀 Restarting node with fast sync data..."
 sleep 5
 sudo systemctl restart zgs
+
+
+# Final Message
+echo ""
+echo "🎉 Installation complete with fast sync!"
+echo "👉 NODE SUCCESSFULLY STARTED:"
