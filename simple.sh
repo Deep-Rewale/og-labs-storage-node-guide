@@ -83,4 +83,4 @@ sudo systemctl start zgs
 # Final Message
 echo ""
 echo "🎉 Installation complete with fast sync!"
-echo "👉 To start your node manually (already started):"
+echo "👉 NODE STARTED SUCCESSFULLY:"
